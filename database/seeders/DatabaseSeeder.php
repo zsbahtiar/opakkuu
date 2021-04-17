@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'name' => 'Zam Zam Saeful Bahtiar',
-            'email' => 'zamzamsaefulbahtiar@yahoo.com',
-            'password' => Hash::make('12345678'),
+            'name' => 'Bahtiar',
+            'email' => 'zsbahtiar',
+            'password' => Hash::make('123123123'),
         ]);
 
         Products::create([

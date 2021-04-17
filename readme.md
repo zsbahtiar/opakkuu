@@ -68,8 +68,8 @@ Run artisan server:
 php artisan serve
 ```
 
-- **Username:** zamzamsaefulbahtiar@yahoo.com
-- **Password:** 12345678
+- **Username:** zsbahtiar
+- **Password:** 123123123
 
 
 
