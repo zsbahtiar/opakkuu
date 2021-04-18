@@ -84,6 +84,6 @@ const Create = () => {
   );
 };
 
-Create.layout = page => <Layout title="Create Product" children={page} />;
+Create.layout = page => <Layout title="Create Product" children={page} description="Page Create Product" />;
 
 export default Create;

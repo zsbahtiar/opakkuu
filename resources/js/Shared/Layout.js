@@ -5,10 +5,10 @@ import FlashMessages from '@/Shared/FlashMessages';
 import TopHeader from '@/Shared/TopHeader';
 import BottomHeader from '@/Shared/BottomHeader';
 
-export default function Layout({ title, children }) {
+export default function Layout({ title, description ="Opakkuu Shop", children }) {
   return (
     <div>
-      <Helmet titleTemplate="%s | Ping CRM" title={title} />
+      <Helmet titleTemplate="%s | Opakkuu" title={title} meta={[{"name": "description", "content": description}]} />
       <div className="flex flex-col">
         <div className="flex flex-col h-screen">
           <div className="md:flex">

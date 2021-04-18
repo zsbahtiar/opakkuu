@@ -135,6 +135,6 @@ const Index = () => {
   );
 };
 
-Index.layout = page => <Layout title="Products" children={page} />;
+Index.layout = page => <Layout title="Products" children={page} description="Page List Product"/>;
 
 export default Index;

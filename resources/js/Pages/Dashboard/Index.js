@@ -1,5 +1,5 @@
 import React from 'react';
-import { InertiaLink, usePage } from '@inertiajs/inertia-react';
+import { usePage } from '@inertiajs/inertia-react';
 import Layout from '@/Shared/Layout';
 
 const Dashboard = () => {
@@ -14,6 +14,6 @@ const Dashboard = () => {
   );
 };
 
-Dashboard.layout = page => <Layout title="Dashboard" children={page} />;
+Dashboard.layout = page => <Layout title="Dashboard" children={page} description="Welcome to Panel Opakkuu" />;
 
 export default Dashboard;

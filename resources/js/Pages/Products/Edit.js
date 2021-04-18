@@ -112,6 +112,6 @@ const Edit = () => {
   );
 };
 
-Edit.layout = page => <Layout children={page} />;
+Edit.layout = page => <Layout children={page} description="Page Edit Product"/>;
 
 export default Edit;
