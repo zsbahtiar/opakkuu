@@ -17,8 +17,9 @@ const Edit = () => {
     description: product?.description ?? '',
     created_by: product?.created_by ?? 'N/A',
     updated_by: product?.updated_by ?? auth.user.name,
-    photo: product?.photo ?? '',
+    slug: product?.slug?? '',
   });
+
 
 
   function handleSubmit(e) {
@@ -57,6 +58,7 @@ const Edit = () => {
         </TrashedMessage>
       )}
       <div className="max-w-3xl overflow-hidden bg-white rounded shadow">
+        <button className='cursor-pointer bg-indigo-600 p-3 text-gray-200' onClick={() => window.open(route('product.detail', data.slug))}>View Product</button>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-wrap p-8 -mb-8 -mr-6">
             <TextInput
@@ -66,6 +68,7 @@ const Edit = () => {
               errors={errors.name}
               value={data.name}
               onChange={e => setData('name', e.target.value)}
+              onBlur={e => setData('slug', e.target.value.split(' ').join('-'))}
               placeholder="Enter name of product here..."
               required
             />
