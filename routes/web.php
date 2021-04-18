@@ -11,6 +11,11 @@
 |
 */
 
+
+// Home
+Route::get('/')->name('home')->uses('HomeController@index');
+
+
 // Auth
 Route::get('login')->name('login')->uses('Auth\LoginController@showLoginForm')->middleware('guest');
 Route::post('login')->name('login.attempt')->uses('Auth\LoginController@login')->middleware('guest');
@@ -33,7 +38,7 @@ Route::prefix('panel')->group(function () {
     Route::get('/img/{path}', 'ImagesController@show')->where('path', '.*');
 
 
-    // Organizations
+    // Products
     Route::get('products')->name('products')->uses('ProductsController@index')->middleware('remember', 'auth');
     Route::get('products/create')->name('products.create')->uses('ProductsController@create')->middleware('auth');
     Route::post('products')->name('products.store')->uses('ProductsController@store')->middleware('auth');
