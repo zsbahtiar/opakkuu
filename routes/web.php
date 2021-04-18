@@ -14,6 +14,8 @@
 
 // Home
 Route::get('/')->name('home')->uses('HomeController@index');
+// Product Detail
+Route::get('/p/{product:slug}')->name('product.detail')->uses('HomeController@ProductDetail');
 
 
 // Auth
