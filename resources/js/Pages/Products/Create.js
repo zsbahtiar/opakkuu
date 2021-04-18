@@ -13,8 +13,21 @@ const Create = () => {
     description: '',
     price: '',
     created_by: auth?.user?.name ?? 'N/A',
-    photo: 'https://images.tokopedia.net/img/cache/900/product-1/2021/3/16/2668215/2668215_4d83f050-b0cf-44e2-bae5-1a906e392a24.jpeg',
+    photo: '',
+    slug: '',
   });
+
+  React.useEffect(() => {
+    fetch(`https://api.unsplash.com/search/photos?client_id=40y9HwQVsRa1ijbhnJWBdDyy7STUGrl97c01sHyW14A&query=clothes`)
+      .then((res) => res.json())
+      .then((data) => {
+        setData('photo', data?.results[Math.floor(new Date().getSeconds()/9)]?.urls?.regular ?? 'https://images.tokopedia.net/img/cache/900/product-1/2021/3/16/2668215/2668215_4d83f050-b0cf-44e2-bae5-1a906e392a24.jpeg')
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+
+  }, [])
 
 
   function handleSubmit(e) {
@@ -43,6 +56,7 @@ const Create = () => {
               errors={errors.name}
               value={data.name}
               onChange={e => setData('name', e.target.value)}
+              onBlur={e => setData('slug', e.target.value.split(' ').join('-'))}
               placeholder="Enter name of product here..."
               required
             />
