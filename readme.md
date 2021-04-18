@@ -3,10 +3,10 @@
 ## TODO
 - [x] Authentication
 - [x] Create, edit, update and delete Product
-- [ ] Homepage
+- [x] Homepage
 - [ ] Deploy
 - [ ] Google Analytics
-- [ ] Google Tag Manager
+- [x] Google Tag Manager
 
 ## Demo
 A demo application [click here](https://opakkuu.herokuapp.com/)
