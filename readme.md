@@ -4,8 +4,8 @@
 - [x] Authentication
 - [x] Create, edit, update and delete Product
 - [x] Homepage
-- [ ] Deploy
-- [ ] Google Analytics
+- [x] Deploy
+- [x] Google Analytics
 - [x] Google Tag Manager
 
 ## Demo
