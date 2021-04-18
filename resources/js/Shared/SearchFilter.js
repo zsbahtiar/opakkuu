@@ -10,7 +10,6 @@ export default () => {
   const [opened, setOpened] = useState(false);
 
   const [values, setValues] = useState({
-    role: filters.role || '', // role is used only on users page
     search: filters.search || '',
     trashed: filters.trashed || ''
   });
@@ -19,7 +18,6 @@ export default () => {
 
   function reset() {
     setValues({
-      role: '',
       search: '',
       trashed: ''
     });
@@ -31,10 +29,12 @@ export default () => {
       const query = Object.keys(pickBy(values)).length
         ? pickBy(values)
         : { remember: 'forget' };
-      Inertia.get(route(route().current()), query, {
-        replace: true,
-        preserveState: true
-      });
+      setTimeout(() => {
+        Inertia.get(route(route().current()), query, {
+          replace: true,
+          preserveState: true
+        });
+      }, 1000)
     }
   }, [values]);
 
@@ -62,19 +62,7 @@ export default () => {
             className="fixed inset-0 z-20 bg-black opacity-25"
           ></div>
           <div className="relative z-30 w-64 px-4 py-6 mt-2 bg-white rounded shadow-lg">
-            {filters.hasOwnProperty('role') && (
-              <SelectInput
-                className="mb-4"
-                label="Role"
-                name="role"
-                value={values.role}
-                onChange={handleChange}
-              >
-                <option value=""></option>
-                <option value="user">User</option>
-                <option value="owner">Owner</option>
-              </SelectInput>
-            )}
+
             <SelectInput
               label="Trashed"
               name="trashed"
