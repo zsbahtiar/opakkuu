@@ -17,7 +17,7 @@ const Edit = () => {
     description: product?.description ?? '',
     created_by: product?.created_by ?? 'N/A',
     updated_by: product?.updated_by ?? auth.user.name,
-    photo: product?.description ?? '',
+    photo: product?.photo ?? '',
   });
 
 
