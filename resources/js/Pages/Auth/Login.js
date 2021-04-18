@@ -8,8 +8,8 @@ import TextInput from '@/Shared/TextInput';
 
 export default () => {
   const { data, setData, errors, post, processing } = useForm({
-    email: 'zamzamsaefulbahtiar@yahoo.com',
-    password: '12345678',
+    email: 'zsbahtiar',
+    password: '123123123',
     remember: true
   });
 
@@ -31,9 +31,9 @@ export default () => {
             <div className="w-24 mx-auto mt-6 border-b-2" />
             <TextInput
               className="mt-10"
-              label="Email"
+              label="Email / Username"
               name="email"
-              type="email"
+              type="text"
               errors={errors.email}
               value={data.email}
               onChange={e => setData('email', e.target.value)}
