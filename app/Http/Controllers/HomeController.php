@@ -31,7 +31,7 @@ class HomeController extends Controller
     {
         return Inertia::render('Home/Detail', [
             'product' => new ProductResource($product),
-            'others'    => new ProductsCollection(Products::where('id', '<>', $product->id)->get())
+            'others'    => new ProductsCollection(Products::where('id', '<>', $product->id)->inRandomOrder()->limit(4)->get())
         ]);
     }
 }
