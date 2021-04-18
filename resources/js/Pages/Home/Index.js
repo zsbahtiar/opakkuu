@@ -5,9 +5,9 @@ import LayoutHome from '@/Shared/LayoutHome';
 const Index = () => {
   const { products } = usePage().props;
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div className="grid grid-cols-1 md:grid-cols-6 gap-3">
       {products?.data?.map((item, idx) => (
-        <div key={idx} className="md:p-8 p-2 bg-white">
+        <div key={idx} className="md:p-8 p-2 bg-white cursor-pointer">
           <img
             className="rounded-lg w-full"
             src={item.photo}
@@ -19,8 +19,8 @@ const Index = () => {
             {item.name}
           </h1>
           <div className="max-w-full">
-            <p className="text-base font-medium tracking-wide text-gray-600 mt-1 whitespace-pre-wrap">
-              {item.description.replace(/\\n/g,'\n')}
+            <p className="text-base font-medium tracking-wide text-gray-600 mt-1 whitespace-pre-wrap truncate">
+              {item.description.replace(/\\n/g,'\n').substring(0,50)}
             </p>
           </div>
         </div>
