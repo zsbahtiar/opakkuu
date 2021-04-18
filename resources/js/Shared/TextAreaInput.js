@@ -12,7 +12,7 @@ export default ({ label, name, className, errors = [], ...props }) => {
         id={name}
         name={name}
         {...props}
-        className={`form-input ${errors.length ? 'error' : ''}`}
+        className={`form-input h-full  ${errors.length ? 'error' : ''}`}
       >{props.value}</textarea>
       {errors && <div className="form-error">{errors}</div>}
     </div>
