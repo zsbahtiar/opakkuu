@@ -80,6 +80,5 @@
     "prefer-stable": true,
     "require-dev": {
         "brianium/paratest": "^6.2"
-    },
-    "platform-check": false
+    }
 }
