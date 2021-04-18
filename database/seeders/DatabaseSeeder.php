@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Bahtiar',
             'email' => 'zsbahtiar',
             'password' => Hash::make('123123123'),
+            'phone' => '82219583279',
         ]);
 
         Products::create([
