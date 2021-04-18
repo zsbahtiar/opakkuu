@@ -11,7 +11,7 @@ class Products extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'name', 'description', 'price', 'photo', 'created_by', 'updated_by',
+        'name', 'description', 'price', 'photo', 'created_by', 'updated_by', 'slug',
     ];
 
     public function scopeFilter($query, array $filters)
