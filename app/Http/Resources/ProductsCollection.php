@@ -14,6 +14,6 @@ class ProductsCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return $this->collection->map->only('id', 'name', 'description', 'price', 'updated_at', 'updated_by', 'deleted_at');
+        return $this->collection->map->only('id', 'name', 'photo', 'description', 'price', 'updated_at', 'updated_by', 'deleted_at');
     }
 }
