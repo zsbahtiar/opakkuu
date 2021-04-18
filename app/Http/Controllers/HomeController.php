@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductResource;
 use App\Http\Resources\ProductsCollection;
 use App\Models\Products;
 use Illuminate\Support\Facades\Request;
@@ -19,6 +20,18 @@ class HomeController extends Controller
                     ->paginate()
                     ->appends(Request::all())
             ),
+        ]);
+    }
+
+    /**
+     * @param Products $product
+     * @return \Inertia\Response
+     */
+    public function ProductDetail(Products $product)
+    {
+        return Inertia::render('Home/Detail', [
+            'product' => new ProductResource($product),
+            'others'    => new ProductsCollection(Products::where('id', '<>', $product->id)->get())
         ]);
     }
 }
