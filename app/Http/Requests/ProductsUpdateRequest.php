@@ -29,6 +29,7 @@ class ProductsUpdateRequest extends FormRequest
             'description' => ['required', 'max:350'],
             'photo' => ['nullable'],
             'updated_by' => ['required'],
+            'slug' => ['required'],
         ];
     }
 }

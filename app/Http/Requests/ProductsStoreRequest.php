@@ -27,8 +27,9 @@ class ProductsStoreRequest extends FormRequest
             'name' => ['required', 'max:100'],
             'price' => ['required', 'min:0', 'numeric'],
             'description' => ['required', 'max:350'],
-            'photo' => ['nullable'],
+            'photo' => ['required'],
             'created_by' => ['required'],
+            'slug' => ['required'],
         ];
     }
 }
