@@ -23,7 +23,8 @@ class ProductsController extends Controller
         return Inertia::render('Products/Index', [
             'filters' => Request::all('search', 'trashed'),
             'products' => new ProductsCollection(
-                Products::orderBy('name')->filter(Request::only('search', 'trashed'))
+                Products::orderBy('created_at', 'desc')
+                    ->filter(Request::only('search', 'trashed'))
                     ->paginate()
                     ->appends(Request::all())
             ),
