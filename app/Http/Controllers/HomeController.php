@@ -15,6 +15,7 @@ class HomeController extends Controller
             'filters' => Request::all('search'),
             'products' => new ProductsCollection(
                 Products::filter(Request::only('search'))
+                    ->orderBy('created_at', 'desc')
                     ->paginate()
                     ->appends(Request::all())
             ),
