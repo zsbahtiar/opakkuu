@@ -14,7 +14,7 @@ export default function OtherProduct({products=[]}){
           >
             <div className='rounded-md relative'>
               <div className='absolute'>
-                <h2 className='w-3/5 text-white bg-gray-700 font-semibold text-3xl p-3 uppercase'>{item?.name ?? ''}</h2>
+                <h2 className='w-3/5 text-white bg-gray-700 font-semibold text-md p-3 uppercase'>{item?.name ?? ''}</h2>
               </div>
               <div className='h-52'>
                 <img

@@ -9,13 +9,13 @@ const Detail = () => {
 
   return (
       <div className='bg-white flex justify-start'>
-        <div className='product-image max-w-sm h-full rounded overflow-hidden shadow-lg'>
+        <div className='product-image  sm:w-full h-full rounded overflow-hidden shadow-lg'>
           <img
             className='w-full'
             src={product.photo}
           />
         </div>
-        <div className='product-description font-sans ml-3 mt-2'>
+        <div className='product-description sm:w-full font-sans ml-3 mt-2'>
           <nav className="text-gray-700 font-light mb-1.5" aria-label="Breadcrumb">
             <ol className="list-none p-0 inline-flex">
               <li className="flex items-center">
@@ -28,7 +28,7 @@ const Detail = () => {
                 </svg>
               </li>
               <li>
-                <InertiaLink href="#" className="text-gray-500" aria-current="page">{product?.name ?? ''}</InertiaLink>
+                <InertiaLink href="#" className="text-gray-500 truncate" aria-current="page">{product?.name ?? ''}</InertiaLink>
               </li>
             </ol>
           </nav>
